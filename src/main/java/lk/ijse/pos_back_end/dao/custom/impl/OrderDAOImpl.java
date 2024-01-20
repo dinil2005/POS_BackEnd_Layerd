@@ -58,27 +58,7 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public void save(OrderDTO dto, Connection connection) {
 
-//        PreparedStatement preparedStatement = connection.prepareStatement(SAVE_ORDER_DETAILS);
-//        preparedStatement.setString(1,dto.getOrder_Id());
-//        preparedStatement.setString(2,dto.getCustomer_Id());
-//        preparedStatement.setString(3,dto.getDate());
-//
-//        if (preparedStatement.executeUpdate() !=0){
-//            logger.info("Save");
-//            PreparedStatement preparedStatement1 = connection.prepareStatement(PLACE_ORDER);
-//            preparedStatement1.setString(1,dto.getOrder_Id());
-//            preparedStatement1.setString(2,dto.getItem_Name());
-//            preparedStatement1.setInt(3,dto.getQty());
-//            preparedStatement1.setDouble(4,dto.getTotal());
-//
-//            if (preparedStatement1.executeUpdate() !=0){
-//                logger.info("Save");
-//            }else {
-//                logger.info("Not Save");
-//            }
-//        }else{
-//
-//        }
+
         try {
             // Assuming 'connection' is your database connection
             connection.setAutoCommit(false);
@@ -120,7 +100,7 @@ public class OrderDAOImpl implements OrderDAO {
             try {
                 if (connection != null) {
                     connection.setAutoCommit(true); // Reset auto-commit to true
-                    connection.close();
+
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
